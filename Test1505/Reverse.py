@@ -89,17 +89,108 @@ print("end =" " is used to print output in same line")
 arr = [1, 2, 3, 4, 5, 6, 7, 8]
 print("Array is :", arr)
 arr.reverse()
-#it workd as sort in java as it modifies arr directly so It will return none if you directly print(arr.reverse())
+# it workd as sort in java as it modifies arr directly so It will return none if you directly print(arr.reverse())
 print("Output Using reverse () : " + str(arr))
 # The original array
 arr = [11, 22, 33, 44, 55]
 print("Array is :", arr)
 res = arr[::-1]  # reversing using list slicing
 print("Output Using Slicing :", res)
-for i in range(len(arr) - 1,-1, -1):
-    print(arr[i], end =" ")
+for i in range(len(arr) - 1, -1, -1):
+    print(arr[i], end=" ")
 print()
 for i in reversed(arr):
-    print(i, end =" ")
+    print(i, end=" ")
 
+print()
+print("P8 : Replace Alternate Character to Uppercase")
+k = "python is easy"
+knew = ""
+print("Given String is " + k)
+print("Expected String is PyThOn iS EaSy")
+for cas in range(len(k)):
+    if cas % 2 == 0:
+        knew = knew + k[cas].upper()
+    else:
+        knew = knew + k[cas]
+print(knew)
 
+print()
+print("P9: Replace First Character to Uppercase For single word string")
+k = "python"
+print("Given String is " + k)
+print("Expected Python")
+uppercase_string=k.capitalize()
+print(uppercase_string)
+print("using for loop")
+new_string=""
+for i in range(len(k)):
+   if i==0:
+        new_string=new_string + k[i].upper()
+   else:
+        new_string=new_string + k[i]
+print(new_string)
+
+print()
+print("P10: remove space ,reverse str and print odd position char")
+k = "I am kunal"
+print("Given String is " + k)
+print("Expected lnka")
+ksp = k.replace(" ","")
+ksp2 =""
+for i in ksp:
+    ksp2 = i + ksp2
+print(ksp2)
+for cas in range(len(ksp2)):
+    if cas % 2 == 0:
+        print(ksp2[cas])
+
+print()
+print("P11: Check how many digits and letters are in string")
+k = "kunal2027"
+print("Given String is " + k)
+print("Expected 5 and 4")
+# initialized value
+total_digits = 0
+total_letters = 0
+# iterate through all characters
+for s in k:
+    # if character is digit (return True)
+    if s.isnumeric():
+        total_digits = total_digits + 1
+    # if character is letter (return False)
+    else:
+        total_letters = total_letters + 1
+print("Total letters found :-", total_letters)
+print("Total digits found :-", total_digits)
+
+print()
+print("P12: swap two strings")
+a = "kunal"
+b = "shah"
+print("Given String is " + a +" "+ b)
+print("Expected shah kunal")
+a = a + b
+#Extract str2 from updated str1
+#in our case it will be substring(0, (9-4)).
+#It will assign string a to b
+b = a[0 : (len(a) - len(b))]
+#Extract str1 from updated str1
+#we need to extract string from in length(b) till end of the string.
+#In our case it will be substring(5).
+#It will assign string shah to a
+a = a[len(b):]
+print(a + " " +b)
+
+print()
+print("P13: Find no of vowels in string")
+a = "life is good"
+print("Given String is " + a)
+print("Expected 5")
+count = 0
+# Creating a set of vowels
+vowel = set("aeiouAEIOU")
+for vo in a:
+    if vo in vowel:
+        count = count + 1
+print("No. of vowels :", count)
